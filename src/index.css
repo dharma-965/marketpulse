@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --brand-from: #6366f1;
+  --brand-to: #8b5cf6;
+  --brand-foreground: #312e81;
+}
+
+.indigo-theme {
+  --brand-from: #6366f1;
+  --brand-to: #8b5cf6;
+  --brand-foreground: #312e81;
+}
+
+.emerald-theme {
+  --brand-from: #10b981;
+  --brand-to: #14b8a6;
+  --brand-foreground: #065f46;
+}
+
+.cyan-theme {
+  --brand-from: #06b6d4;
+  --brand-to: #0ea5e9;
+  --brand-foreground: #0f766e;
+}
+
+.rose-theme {
+  --brand-from: #ec4899;
+  --brand-to: #f43f5e;
+  --brand-foreground: #831843;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-slate-100 text-slate-900 antialiased;
+}
+
+body.dark {
+  @apply bg-slate-950 text-slate-100;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+.shadow-card {
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.12);
+}
+
+/* MarketPulse extras */
+.ticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06));
+}
+
+.news-list {
+  display: grid;
+  gap: 10px;
+}
+
+.news-item {
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,250,0.4));
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.pulse-highlight {
+  position: relative;
+}
+.pulse-highlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(99,102,241,0.12);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.pulse-highlight:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .news-item { padding: 10px; }
+}
